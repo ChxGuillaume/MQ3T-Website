@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
   devServer: {
     host: "0.0.0.0",
   },
@@ -21,6 +22,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/eslint-module",
     "@nuxtjs/google-fonts",
+    "@nuxt/image",
   ],
   googleFonts: {
     families: {
