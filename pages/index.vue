@@ -20,7 +20,7 @@ const appImage = computed(() => {
         class="mt-20 xl:mt-52 2xl:mt-64 mb-16 2xl:mb-24 flex flex-col items-center gap-8 text-center"
       >
         <h1 class="text-4xl">
-          The last MQTT development tool you'll ever need {{ preferredColor }}
+          The last MQTT development tool you'll ever need
         </h1>
         <download-button />
       </div>
