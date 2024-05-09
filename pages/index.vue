@@ -24,7 +24,7 @@ const appImage = computed(() => {
         </h1>
         <download-button />
       </div>
-      <img class="app-image" :src="`_nuxt/public/img/${appImage}`" alt="MQ3T" />
+      <img class="app-image" :src="`/img/${appImage}`" alt="MQ3T" />
     </div>
   </div>
 </template>
