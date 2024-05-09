@@ -40,7 +40,7 @@ const getAsset = (
   platform: Arch["platform"],
   arch: Arch["architecture"],
 ): GithubReleaseAsset | null => {
-  return data.value.assets.find((asset) => {
+  return data.value.assets?.find((asset) => {
     if (platform === "Windows") {
       return (
         asset.name.endsWith(".exe") &&
@@ -98,7 +98,7 @@ onMounted(async () => {
 <template>
   <button class="btn" @click="handleDownload">
     <font-awesome-icon :icon="icon" />
-    Download ({{ arch.architecture }})
+    Download
   </button>
 </template>
 

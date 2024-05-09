@@ -2,10 +2,8 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 const title = "MQ3T";
-
-const description =
-  "MQTT Tools - A simple MQTT client for your development needs";
-const image = "/img/screenshots/topics-mix.png";
+const description = "The last MQTT development tool you'll ever need";
+const image = "/img/screenshots/topics/topics-2-mix.png";
 
 useHead({
   htmlAttrs: { lang: "en" },
@@ -65,6 +63,8 @@ header {
 <style>
 body {
   font-family: "Rubik", sans-serif;
+
+  overflow-x: hidden;
 
   @apply dark:bg-neutral-950 dark:text-white;
 }

@@ -10,10 +10,12 @@ useHead({ title: "MQ3T" });
       <div class="radial-bg"></div>
     </div>
     <div class="min-h-dvh flex justify-center items-center flex-col">
-      <h1 class="my-52 text-4xl text-center">
-        The last MQTT development tool you'll ever need
-      </h1>
-      <download-button />
+      <div class="mt-52 mb-44 flex flex-col items-center gap-8 text-center">
+        <h1 class="text-4xl">
+          The last MQTT development tool you'll ever need
+        </h1>
+        <download-button />
+      </div>
       <img
         class="app-image"
         src="/public/img/mqt3-dark.png"
@@ -26,7 +28,7 @@ useHead({ title: "MQ3T" });
 
 <style scoped>
 .app-image {
-  @apply 2xl:w-[1100px] 3xl:w-[1400px] max-w-full;
+  @apply xl:w-[1100px] 3xl:w-[1400px] max-w-full;
 }
 
 .radial-wrapper {
@@ -34,7 +36,7 @@ useHead({ title: "MQ3T" });
 }
 
 .radial-wrapper .radial-bg {
-  @apply bg-primary relative h-[1000px] w-full;
+  @apply bg-primary relative w-[200vw] xl:w-full h-[1000px] left-[-50%] xl:left-0 right-[-50%] xl:right-0;
 
   animation: glow 2s alternate infinite;
   mask-image: radial-gradient(rgba(0, 0, 0, 0.45), transparent 75%);
