@@ -1,7 +1,13 @@
 <script setup lang="ts">
+import { usePreferredColorScheme } from "@vueuse/core";
 import DownloadButton from "~/components/DownloadButton.vue";
 
 useHead({ title: "MQ3T" });
+
+const preferredColor = usePreferredColorScheme();
+const appImage = computed(() => {
+  return preferredColor.value === "light" ? "mq3t-light.png" : "mq3t-dark.png";
+});
 </script>
 
 <template>
@@ -14,15 +20,11 @@ useHead({ title: "MQ3T" });
         class="mt-20 xl:mt-52 2xl:mt-64 mb-16 2xl:mb-24 flex flex-col items-center gap-8 text-center"
       >
         <h1 class="text-4xl">
-          The last MQTT development tool you'll ever need
+          The last MQTT development tool you'll ever need {{ preferredColor }}
         </h1>
         <download-button />
       </div>
-      <img
-        class="app-image"
-        src="/public/img/mqt3-dark.png"
-        alt="App Preview"
-      />
+      <img class="app-image" :src="`_nuxt/public/img/${appImage}`" alt="MQ3T" />
     </div>
   </div>
 </template>
