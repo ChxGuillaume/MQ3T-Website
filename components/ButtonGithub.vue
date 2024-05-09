@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
   <a
     href="https://github.com/ChxGuillaume/MQ3T"
     target="_blank"
-    class="w-8 h-8"
+    class="tw-w-8 tw-h-8"
   >
     <font-awesome-icon icon="fab fa-github" class="icon-github" />
   </a>
@@ -14,10 +14,10 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 <style scoped>
 .icon-github {
-  @apply w-full h-full text-black dark:text-white transition-colors;
+  @apply tw-w-full tw-h-full tw-text-black dark:tw-text-white tw-transition-colors;
 }
 
 .icon-github:hover {
-  @apply text-gray-700 dark:text-neutral-300;
+  @apply tw-text-gray-700 dark:tw-text-neutral-300;
 }
 </style>

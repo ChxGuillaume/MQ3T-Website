@@ -30,10 +30,14 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <template>
-  <header class="flex justify-between">
-    <div class="h-8 flex items-center gap-3">
-      <img src="/public/img/logo/win512pts.png" alt="Logo" class="max-h-full" />
-      <h1 class="text-xl">MQ3T</h1>
+  <header class="tw-flex tw-justify-between">
+    <div class="tw-h-8 tw-flex tw-items-center tw-gap-3">
+      <img
+        src="/public/img/logo/win512pts.png"
+        alt="Logo"
+        class="tw-max-h-full"
+      />
+      <h1 class="tw-text-xl">MQ3T</h1>
     </div>
     <button-github />
   </header>
@@ -41,12 +45,16 @@ const currentYear = new Date().getFullYear();
     <slot />
   </div>
   <footer>
-    <div class="h-8 flex items-center gap-3">
-      <img src="/public/img/logo/win512pts.png" alt="Logo" class="max-h-full" />
-      <h1 class="text-xl">MQ3T</h1>
+    <div class="tw-h-8 tw-flex tw-items-center tw-gap-3">
+      <img
+        src="/public/img/logo/win512pts.png"
+        alt="Logo"
+        class="tw-max-h-full"
+      />
+      <h1 class="tw-text-xl">MQ3T</h1>
     </div>
     <button-github class="mt-4 max-w-8" />
-    <p class="text-sm text-black dark:text-neutral-500">
+    <p class="tw-text-sm tw-text-black dark:tw-text-neutral-500">
       Copyright © {{ currentYear }} MQ3T. All rights reserved.
     </p>
   </footer>
@@ -54,11 +62,11 @@ const currentYear = new Date().getFullYear();
 
 <style scoped>
 header {
-  @apply absolute top-0 left-0 right-0 w-full mx-auto p-4 2xl:max-w-[1000px] 3xl:max-w-[1200px];
+  @apply tw-absolute tw-top-0 tw-left-0 tw-right-0 tw-w-full tw-mx-auto tw-p-4 2xl:tw-max-w-[1000px] 3xl:tw-max-w-[1200px];
 }
 
 footer {
-  @apply bg-black/5 dark:bg-neutral-900/20 flex flex-col items-center gap-4 mx-auto p-4 text-center;
+  @apply tw-bg-black/5 dark:tw-bg-neutral-900/20 tw-flex tw-flex-col tw-items-center tw-gap-4 tw-mx-auto tw-p-4 tw-text-center;
 }
 </style>
 
@@ -66,24 +74,24 @@ footer {
 body {
   font-family: "Rubik", sans-serif;
 
-  @apply dark:bg-neutral-950 dark:text-white overflow-x-hidden max-w-[100vw];
+  @apply dark:tw-bg-neutral-950 dark:tw-text-white tw-overflow-x-hidden tw-max-w-[100vw];
 }
 
 ::-webkit-scrollbar {
-  @apply w-2;
+  @apply tw-w-2;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-neutral-200 dark:bg-neutral-800;
+  @apply tw-bg-neutral-200 dark:tw-bg-neutral-800;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  @apply bg-neutral-400 transition-colors dark:bg-neutral-700 dark:transition-colors;
+  @apply tw-bg-neutral-400 tw-transition-colors dark:tw-bg-neutral-700 dark:tw-transition-colors;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-neutral-500 dark:bg-neutral-600;
+  @apply tw-bg-neutral-500 dark:tw-bg-neutral-600;
 }
 </style>

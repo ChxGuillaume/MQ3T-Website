@@ -18,11 +18,13 @@ export default defineNuxtConfig({
     },
   },
   modules: [
+    "nuxt-quasar-ui",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/eslint-module",
     "@nuxtjs/google-fonts",
     "@nuxt/image",
   ],
+  quasar: {},
   googleFonts: {
     families: {
       Rubik: true,

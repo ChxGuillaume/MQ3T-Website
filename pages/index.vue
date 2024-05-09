@@ -5,9 +5,27 @@ import DownloadButton from "~/components/DownloadButton.vue";
 useHead({ title: "MQ3T" });
 
 const preferredColor = usePreferredColorScheme();
-const appImage = computed(() => {
-  return preferredColor.value === "light" ? "mq3t-light.png" : "mq3t-dark.png";
-});
+const img = useImage();
+
+const imageModifiers = { width: 1400, height: 904 };
+const placeHolderModifiers = {
+  modifiers: {
+    width: Math.round(1400 / 3),
+    height: Math.round(904 / 3),
+    blur: 3,
+    q: 30,
+  },
+};
+
+const images = {
+  light: img(`/img/mq3t-light.png`, imageModifiers),
+  dark: img(`/img/mq3t-dark.png`, imageModifiers),
+};
+
+const placeholders = {
+  light: img.getSizes(`/img/mq3t-light.png`, placeHolderModifiers),
+  dark: img.getSizes(`/img/mq3t-dark.png`, placeHolderModifiers),
+};
 </script>
 
 <template>
@@ -15,21 +33,23 @@ const appImage = computed(() => {
     <div class="radial-wrapper">
       <div class="radial-bg"></div>
     </div>
-    <div class="min-h-lvh flex justify-center items-center flex-col">
+    <div
+      class="tw-w-min-h-lvh tw-flex tw-justify-center tw-items-center tw-flex-col"
+    >
       <div
-        class="mt-20 xl:mt-52 2xl:mt-64 mb-16 2xl:mb-24 flex flex-col items-center gap-8 text-center"
+        class="tw-mt-20 xl:tw-mt-52 2xl:tw-mt-64 tw-mb-16 2xl:tw-mb-24 tw-flex tw-flex-col tw-items-center tw-gap-8 tw-text-center"
       >
-        <h1 class="text-4xl">
+        <h1 class="tw-text-4xl">
           The last MQTT development tool you'll ever need
         </h1>
         <download-button />
       </div>
-      <nuxt-img
-        class="app-image"
-        :src="`/img/${appImage}`"
-        sizes="1400px"
-        placeholder
+      <q-img
+        :ratio="1400 / 904"
+        :src="images[preferredColor]"
+        :placeholder-src="placeholders[preferredColor]?.src"
         alt="MQ3T"
+        class="app-image"
       />
     </div>
   </div>
@@ -37,15 +57,15 @@ const appImage = computed(() => {
 
 <style scoped>
 .app-image {
-  @apply xl:w-[1100px] 3xl:w-[1400px] max-w-full;
+  @apply xl:tw-w-[1100px] 3xl:tw-w-[1400px] tw-max-w-full;
 }
 
 .radial-wrapper {
-  @apply absolute top-0 left-0 w-full -z-50 overflow-hidden;
+  @apply tw-absolute tw-top-0 tw-left-0 tw-w-full -tw-z-50 tw-overflow-hidden;
 }
 
 .radial-wrapper .radial-bg {
-  @apply relative bg-primary w-[200vw] xl:w-full h-[1000px] left-[-50%] xl:left-0 right-[-50%] xl:right-0;
+  @apply tw-relative tw-bg-primary tw-w-[200vw] xl:tw-w-full tw-h-[1000px] tw-left-[-50%] xl:tw-left-0 tw-right-[-50%] xl:tw-right-0;
 
   animation: glow 2s alternate infinite;
   mask-image: radial-gradient(rgba(0, 0, 0, 0.45), transparent 75%);

@@ -104,6 +104,6 @@ onMounted(async () => {
 
 <style scoped>
 .btn {
-  @apply px-4 py-2 flex items-center gap-3 bg-black text-white dark:bg-white dark:text-black rounded-lg;
+  @apply tw-px-4 tw-py-2 tw-flex tw-items-center tw-gap-3 tw-bg-black tw-text-white dark:tw-bg-white dark:tw-text-black tw-rounded-lg;
 }
 </style>
