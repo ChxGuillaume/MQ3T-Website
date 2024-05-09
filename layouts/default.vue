@@ -68,6 +68,10 @@ header {
 footer {
   @apply tw-bg-black/5 dark:tw-bg-neutral-900/20 tw-flex tw-flex-col tw-items-center tw-gap-4 tw-mx-auto tw-p-4 tw-text-center;
 }
+
+.default {
+  @apply tw-min-h-lvh;
+}
 </style>
 
 <style>

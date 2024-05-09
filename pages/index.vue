@@ -39,7 +39,7 @@ const placeholders = {
       <div
         class="tw-mt-20 xl:tw-mt-52 2xl:tw-mt-64 tw-mb-16 2xl:tw-mb-24 tw-flex tw-flex-col tw-items-center tw-gap-8 tw-text-center"
       >
-        <h1 class="tw-text-4xl">
+        <h1 class="tw-px-4 tw-text-4xl">
           The last MQTT development tool you'll ever need
         </h1>
         <download-button />
