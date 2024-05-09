@@ -34,10 +34,10 @@ const placeholders = {
       <div class="radial-bg"></div>
     </div>
     <div
-      class="tw-w-min-h-lvh tw-flex tw-justify-center tw-items-center tw-flex-col"
+      class="tw-min-h-lvh tw-flex tw-justify-center tw-items-center tw-flex-col"
     >
       <div
-        class="tw-mt-20 xl:tw-mt-52 2xl:tw-mt-64 tw-mb-16 2xl:tw-mb-24 tw-flex tw-flex-col tw-items-center tw-gap-8 tw-text-center"
+        class="tw-mt-44 xl:tw-mt-52 2xl:tw-mt-64 tw-mb-16 2xl:tw-mb-24 tw-flex tw-flex-col tw-items-center tw-gap-8 tw-text-center"
       >
         <h1 class="tw-px-4 tw-text-4xl">
           The last MQTT development tool you'll ever need

@@ -2,6 +2,8 @@
 import { onMounted } from "vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
+const { isWindows, isMac, isLinux } = useDevice();
+
 type Arch = {
   architecture: "x86" | "arm";
   platform: "Windows" | "macOS" | "Linux";
@@ -26,13 +28,13 @@ const data = ref<GithubRelease>({});
 const icon = computed(() => {
   switch (arch.value.platform) {
     case "Windows":
-      return "fab fa-windows";
+      return ["fab", "fa-windows"];
     case "macOS":
-      return "fab fa-apple";
+      return ["fab", "fa-apple"];
     case "Linux":
-      return "fab fa-linux";
+      return ["fab", "fa-linux"];
     default:
-      return "fas fa-download";
+      return ["fas", "fa-download"];
   }
 });
 
@@ -78,7 +80,17 @@ const handleDownload = () => {
   window.location.replace(asset.browser_download_url);
 };
 
+onBeforeMount(() => {
+  if (isWindows) arch.value.platform = "Windows";
+  else if (isMac) arch.value.platform = "macOS";
+  else if (isLinux) arch.value.platform = "Linux";
+});
+
 onMounted(async () => {
+  if (isWindows) arch.value.platform = "Windows";
+  else if (isMac) arch.value.platform = "macOS";
+  else if (isLinux) arch.value.platform = "Linux";
+
   data.value = await (
     await fetch(
       "https://api.github.com/repos/ChxGuillaume/MQ3T/releases/latest",
@@ -103,7 +115,15 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+root {
+  --tw-shadow-color: #000;
+}
+
 .btn {
-  @apply tw-px-4 tw-py-2 tw-flex tw-items-center tw-gap-3 tw-bg-black tw-text-white dark:tw-bg-white dark:tw-text-black tw-rounded-lg;
+  @apply tw-px-4 tw-py-2 tw-flex tw-items-center tw-gap-3 tw-bg-black tw-text-white dark:tw-bg-white dark:tw-text-black tw-rounded-lg tw-transition-shadow tw-shadow-accent;
+}
+
+.btn:hover {
+  box-shadow: 0 0 20px 2px var(--tw-shadow-color);
 }
 </style>

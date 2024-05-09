@@ -1,8 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devServer: {
-    host: "0.0.0.0",
-  },
   app: {
     head: {
       charset: "utf-8",
@@ -23,7 +20,15 @@ export default defineNuxtConfig({
     "@nuxtjs/eslint-module",
     "@nuxtjs/google-fonts",
     "@nuxt/image",
+    "@nuxtjs/device",
   ],
+  build: {
+    transpile: [
+      "@fortawesome/vue-fontawesome",
+      "@fortawesome/free-solid-svg-icons",
+      "@fortawesome/free-brands-svg-icons",
+    ],
+  },
   quasar: {},
   googleFonts: {
     families: {

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import ButtonGithub from "~/components/ButtonGithub.vue";
-
 const title = "MQ3T";
 const description = "The last MQTT development tool you'll ever need";
 const image = "/img/screenshots/topics/topics-2-mix.png";
@@ -30,34 +28,36 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <template>
-  <header class="tw-flex tw-justify-between">
-    <div class="tw-h-8 tw-flex tw-items-center tw-gap-3">
-      <img
-        src="/public/img/logo/win512pts.png"
-        alt="Logo"
-        class="tw-max-h-full"
-      />
-      <h1 class="tw-text-xl">MQ3T</h1>
+  <client-only>
+    <header class="tw-flex tw-justify-between">
+      <div class="tw-h-8 tw-flex tw-items-center tw-gap-3">
+        <img
+          src="/public/img/logo/win512pts.png"
+          alt="Logo"
+          class="tw-max-h-full"
+        />
+        <h1 class="tw-text-xl">MQ3T</h1>
+      </div>
+      <button-github />
+    </header>
+    <div class="default">
+      <slot />
     </div>
-    <button-github />
-  </header>
-  <div class="default">
-    <slot />
-  </div>
-  <footer>
-    <div class="tw-h-8 tw-flex tw-items-center tw-gap-3">
-      <img
-        src="/public/img/logo/win512pts.png"
-        alt="Logo"
-        class="tw-max-h-full"
-      />
-      <h1 class="tw-text-xl">MQ3T</h1>
-    </div>
-    <button-github class="mt-4 max-w-8" />
-    <p class="tw-text-sm tw-text-black dark:tw-text-neutral-500">
-      Copyright © {{ currentYear }} MQ3T. All rights reserved.
-    </p>
-  </footer>
+    <footer>
+      <div class="tw-h-8 tw-flex tw-items-center tw-gap-3">
+        <img
+          src="/public/img/logo/win512pts.png"
+          alt="Logo"
+          class="tw-max-h-full"
+        />
+        <h1 class="tw-text-xl">MQ3T</h1>
+      </div>
+      <button-github class="mt-4 max-w-8" />
+      <p class="tw-text-sm tw-text-black dark:tw-text-neutral-500">
+        Copyright © {{ currentYear }} MQ3T. All rights reserved.
+      </p>
+    </footer>
+  </client-only>
 </template>
 
 <style scoped>
@@ -66,7 +66,7 @@ header {
 }
 
 footer {
-  @apply tw-bg-black/5 dark:tw-bg-neutral-900/20 tw-flex tw-flex-col tw-items-center tw-gap-4 tw-mx-auto tw-p-4 tw-text-center;
+  @apply tw-w-full tw-bg-black/5 dark:tw-bg-neutral-900/20 tw-flex tw-flex-col tw-items-center tw-gap-4 tw-mx-auto tw-p-4 tw-text-center;
 }
 
 .default {
