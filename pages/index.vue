@@ -9,7 +9,7 @@ useHead({ title: "MQ3T" });
     <div class="radial-wrapper">
       <div class="radial-bg"></div>
     </div>
-    <div class="min-h-dvh flex justify-center items-center flex-col">
+    <div class="min-h-lvh flex justify-center items-center flex-col">
       <div
         class="mt-20 xl:mt-52 2xl:mt-64 mb-16 2xl:mb-24 flex flex-col items-center gap-8 text-center"
       >
