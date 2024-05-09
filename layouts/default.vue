@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import ButtonGithub from "~/components/ButtonGithub.vue";
 
 const title = "MQ3T";
 const description = "The last MQTT development tool you'll ever need";
@@ -25,6 +25,8 @@ useSeoMeta({
   ogLocale: "en_US",
   ogUrl: route.fullPath,
 });
+
+const currentYear = new Date().getFullYear();
 </script>
 
 <template>
@@ -33,30 +35,30 @@ useSeoMeta({
       <img src="/public/img/logo/win512pts.png" alt="Logo" class="max-h-full" />
       <h1 class="text-xl">MQ3T</h1>
     </div>
-    <a
-      href="https://github.com/ChxGuillaume/MQ3T"
-      target="_blank"
-      class="w-8 h-8"
-    >
-      <font-awesome-icon icon="fab fa-github" class="icon-github" />
-    </a>
+    <button-github />
   </header>
   <div class="default">
     <slot />
   </div>
+  <footer>
+    <div class="h-8 flex items-center gap-3">
+      <img src="/public/img/logo/win512pts.png" alt="Logo" class="max-h-full" />
+      <h1 class="text-xl">MQ3T</h1>
+    </div>
+    <button-github class="mt-4 max-w-8" />
+    <p class="text-sm text-black dark:text-neutral-500">
+      Copyright © {{ currentYear }} MQ3T. All rights reserved.
+    </p>
+  </footer>
 </template>
 
 <style scoped>
 header {
-  @apply mx-auto p-4 2xl:max-w-[1000px] 3xl:max-w-[1200px];
+  @apply absolute top-0 left-0 right-0 w-full mx-auto p-4 2xl:max-w-[1000px] 3xl:max-w-[1200px];
 }
 
-.icon-github {
-  @apply w-full h-full text-black dark:text-white transition-colors;
-}
-
-.icon-github:hover {
-  @apply text-gray-700 dark:text-neutral-300;
+footer {
+  @apply bg-black/5 dark:bg-neutral-900/20 flex flex-col items-center gap-4 mx-auto p-4 text-center;
 }
 </style>
 
@@ -64,9 +66,7 @@ header {
 body {
   font-family: "Rubik", sans-serif;
 
-  overflow-x: hidden;
-
-  @apply dark:bg-neutral-950 dark:text-white;
+  @apply dark:bg-neutral-950 dark:text-white overflow-x-hidden max-w-[100vw];
 }
 
 ::-webkit-scrollbar {
