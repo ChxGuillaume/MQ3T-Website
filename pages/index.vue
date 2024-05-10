@@ -44,13 +44,15 @@ const placeholders = {
         </h1>
         <download-button />
       </div>
-      <q-img
-        :ratio="1400 / 904"
-        :src="images[preferredColor]"
-        :placeholder-src="placeholders[preferredColor]?.src"
-        alt="MQ3T"
-        class="app-image"
-      />
+      <client-only>
+        <q-img
+          :ratio="1400 / 904"
+          :src="images[preferredColor]"
+          :placeholder-src="placeholders[preferredColor]?.src"
+          alt="MQ3T"
+          class="app-image"
+        />
+      </client-only>
     </div>
   </div>
 </template>

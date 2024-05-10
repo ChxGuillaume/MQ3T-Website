@@ -109,7 +109,9 @@ onMounted(async () => {
 
 <template>
   <button class="btn" @click="handleDownload">
-    <font-awesome-icon :icon="icon" />
+    <client-only>
+      <font-awesome-icon :icon="icon" />
+    </client-only>
     Download
   </button>
 </template>

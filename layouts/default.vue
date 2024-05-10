@@ -28,36 +28,34 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <template>
-  <client-only>
-    <header class="tw-flex tw-justify-between">
-      <div class="tw-h-8 tw-flex tw-items-center tw-gap-3">
-        <img
-          src="/public/img/logo/win512pts.png"
-          alt="Logo"
-          class="tw-max-h-full"
-        />
-        <h1 class="tw-text-xl">MQ3T</h1>
-      </div>
-      <button-github />
-    </header>
-    <div class="default">
-      <slot />
+  <header class="tw-flex tw-justify-between">
+    <div class="tw-h-8 tw-flex tw-items-center tw-gap-3">
+      <img
+        src="/public/img/logo/win512pts.png"
+        alt="Logo"
+        class="tw-max-h-full"
+      />
+      <h1 class="tw-text-xl">MQ3T</h1>
     </div>
-    <footer>
-      <div class="tw-h-8 tw-flex tw-items-center tw-gap-3">
-        <img
-          src="/public/img/logo/win512pts.png"
-          alt="Logo"
-          class="tw-max-h-full"
-        />
-        <h1 class="tw-text-xl">MQ3T</h1>
-      </div>
-      <button-github class="mt-4 max-w-8" />
-      <p class="tw-text-sm tw-text-black dark:tw-text-neutral-500">
-        Copyright © {{ currentYear }} MQ3T. All rights reserved.
-      </p>
-    </footer>
-  </client-only>
+    <button-github />
+  </header>
+  <div class="default">
+    <slot />
+  </div>
+  <footer>
+    <div class="tw-h-8 tw-flex tw-items-center tw-gap-3">
+      <img
+        src="/public/img/logo/win512pts.png"
+        alt="Logo"
+        class="tw-max-h-full"
+      />
+      <h1 class="tw-text-xl">MQ3T</h1>
+    </div>
+    <button-github class="mt-4 max-w-8" />
+    <p class="tw-text-sm tw-text-black dark:tw-text-neutral-500">
+      Copyright © {{ currentYear }} MQ3T. All rights reserved.
+    </p>
+  </footer>
 </template>
 
 <style scoped>
