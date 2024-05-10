@@ -29,32 +29,30 @@ const placeholders = {
 </script>
 
 <template>
-  <div>
-    <div class="radial-wrapper">
-      <div class="radial-bg"></div>
-    </div>
+  <div class="radial-wrapper">
+    <div class="radial-bg"></div>
+  </div>
+  <div
+    class="tw-min-h-svh tw-flex tw-justify-center tw-items-center tw-flex-col"
+  >
     <div
-      class="tw-min-h-lvh tw-flex tw-justify-center tw-items-center tw-flex-col"
+      class="tw-mt-44 xl:tw-mt-52 2xl:tw-mt-64 tw-mb-16 2xl:tw-mb-24 tw-flex tw-flex-col tw-items-center tw-gap-8 tw-text-center"
     >
-      <div
-        class="tw-mt-44 xl:tw-mt-52 2xl:tw-mt-64 tw-mb-16 2xl:tw-mb-24 tw-flex tw-flex-col tw-items-center tw-gap-8 tw-text-center"
-      >
-        <h1 class="tw-px-4 tw-text-4xl">
-          The last MQTT development tool you'll ever need
-        </h1>
-        <download-button />
-      </div>
-      <div class="app-image">
-        <q-responsive :ratio="1400 / 904">
-          <client-only>
-            <q-img
-              :src="images[preferredColor]"
-              :placeholder-src="placeholders[preferredColor]?.src"
-              alt="MQ3T"
-            />
-          </client-only>
-        </q-responsive>
-      </div>
+      <h1 class="tw-px-4 tw-text-4xl">
+        The last MQTT development tool you'll ever need
+      </h1>
+      <download-button />
+    </div>
+    <div class="app-image">
+      <q-responsive :ratio="1400 / 904">
+        <client-only>
+          <q-img
+            :src="images[preferredColor]"
+            :placeholder-src="placeholders[preferredColor]?.src"
+            alt="MQ3T"
+          />
+        </client-only>
+      </q-responsive>
     </div>
   </div>
 </template>
@@ -69,7 +67,7 @@ const placeholders = {
 }
 
 .radial-wrapper .radial-bg {
-  @apply tw-relative tw-bg-primary tw-w-[200vw] xl:tw-w-full tw-h-[1000px] tw-left-[-50%] xl:tw-left-0 tw-right-[-50%] xl:tw-right-0;
+  @apply tw-relative tw-bg-primary tw-w-[200vw] xl:tw-w-full tw-h-[1000px] tw-max-h-svh tw-left-[-50%] xl:tw-left-0 tw-right-[-50%] xl:tw-right-0;
 
   animation: glow 2s alternate infinite;
   mask-image: radial-gradient(rgba(0, 0, 0, 0.45), transparent 75%);
