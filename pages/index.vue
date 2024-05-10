@@ -18,13 +18,13 @@ const placeHolderModifiers = {
 };
 
 const images = {
-  light: img(`/img/mq3t-light.png`, imageModifiers),
-  dark: img(`/img/mq3t-dark.png`, imageModifiers),
+  light: img(`/img/screenshots/mq3t-light.png`, imageModifiers),
+  dark: img(`/img/screenshots/mq3t-dark.png`, imageModifiers),
 };
 
 const placeholders = {
-  light: img.getSizes(`/img/mq3t-light.png`, placeHolderModifiers),
-  dark: img.getSizes(`/img/mq3t-dark.png`, placeHolderModifiers),
+  light: img.getSizes(`/img/screenshots/mq3t-light.png`, placeHolderModifiers),
+  dark: img.getSizes(`/img/screenshots/mq3t-dark.png`, placeHolderModifiers),
 };
 </script>
 
@@ -44,22 +44,24 @@ const placeholders = {
         </h1>
         <download-button />
       </div>
-      <client-only>
-        <q-img
-          :ratio="1400 / 904"
-          :src="images[preferredColor]"
-          :placeholder-src="placeholders[preferredColor]?.src"
-          alt="MQ3T"
-          class="app-image"
-        />
-      </client-only>
+      <div class="app-image">
+        <q-responsive :ratio="1400 / 904">
+          <client-only>
+            <q-img
+              :src="images[preferredColor]"
+              :placeholder-src="placeholders[preferredColor]?.src"
+              alt="MQ3T"
+            />
+          </client-only>
+        </q-responsive>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
 .app-image {
-  @apply xl:tw-w-[1100px] 3xl:tw-w-[1400px] tw-max-w-full;
+  @apply tw-w-full xl:tw-w-[1100px] 3xl:tw-w-[1400px];
 }
 
 .radial-wrapper {
