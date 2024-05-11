@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { usePreferredColorScheme } from "@vueuse/core";
+import anime from "animejs/lib/anime.es";
 import DownloadButton from "~/components/DownloadButton.vue";
 
 useHead({ title: "MQ3T" });
@@ -26,6 +27,16 @@ const placeholders = {
   light: img.getSizes(`/img/screenshots/mq3t-light.png`, placeHolderModifiers),
   dark: img.getSizes(`/img/screenshots/mq3t-dark.png`, placeHolderModifiers),
 };
+
+const animateAppImage = () => {
+  anime({
+    targets: "#app-image",
+    easing: "easeOutSine",
+    translateY: [200, 0],
+    opacity: [0, 1],
+    duration: 1000,
+  });
+};
 </script>
 
 <template>
@@ -47,9 +58,11 @@ const placeholders = {
       <q-responsive :ratio="1400 / 904">
         <client-only>
           <q-img
+            id="app-image"
             :src="images[preferredColor]"
             :placeholder-src="placeholders[preferredColor]?.src"
             alt="MQ3T"
+            @load="animateAppImage"
           />
         </client-only>
       </q-responsive>
@@ -58,6 +71,10 @@ const placeholders = {
 </template>
 
 <style scoped>
+#app-image {
+  opacity: 0;
+}
+
 .app-image {
   @apply tw-w-full xl:tw-w-[1100px] 3xl:tw-w-[1400px];
 }
