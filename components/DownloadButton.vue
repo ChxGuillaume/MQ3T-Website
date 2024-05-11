@@ -109,9 +109,11 @@ onMounted(async () => {
 
 <template>
   <button class="btn" @click="handleDownload">
-    <client-only>
-      <font-awesome-icon :icon="icon" />
-    </client-only>
+    <span class="icon">
+      <client-only>
+        <font-awesome-icon :icon="icon" />
+      </client-only>
+    </span>
     Download
   </button>
 </template>
@@ -119,6 +121,10 @@ onMounted(async () => {
 <style scoped>
 root {
   --tw-shadow-color: #000;
+}
+
+.icon {
+  @apply tw-w-3;
 }
 
 .btn {
